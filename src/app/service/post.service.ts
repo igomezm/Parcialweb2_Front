@@ -16,17 +16,6 @@ export class PostService {
    this.http.post('http://localhost:3000/',user);
   }
 
-  deletePost(deletePost){
-    this.http.post('http://localhost:3000/', deletePost);
-  }
-
-  Allpost(){
-    this.http.get('http://localhost:3000/users/');
-  }
   
-  getAllPosts(){
-    this.http.get('http://localhost:3000/');
-
-  }
 
 }

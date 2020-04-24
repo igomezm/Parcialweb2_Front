@@ -16,23 +16,5 @@ export class UserService {
    return this.http.post('http://localhost:3000/users/',user);
   }
 
-  loginUser(user){
-    return this.http.post('http://localhost:3000/users/login', user);
-  }
-
-  getByUserName(username): Observable<User> {
-    return this.http.get<User>('http://localhost:3000/users/username/'+ username);
-  }
-  findOneUser(id){
-    return this.http.get('http://localhost:3000/users/'+ id);
-  }
-  getAllUsers(){
-    return this.http.get('http://localhost:3000/users/');
-
-  }
-  deleteuSERByUsername(username){
-    return this.http.get('http://localhost:3000/users/'+ username);
-
-  }
 
 }
