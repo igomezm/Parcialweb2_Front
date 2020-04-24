@@ -12,6 +12,7 @@ import { CookieService} from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule, MatIconModule,MatCardModule, MatButtonModule,MatProgressBarModule } from '@angular/material';
 
+
 export const routes: Routes = [
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
