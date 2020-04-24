@@ -20,7 +20,6 @@ import { PostService } from './service/post.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 
-
 export const routes: Routes = [
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
@@ -32,11 +31,20 @@ export const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
   //  TweetComponent,
     LoginComponent,
     RegisterComponent,
     TweetsComponent,
     ProfileComponent
+=======
+    TweetComponent,
+    LoginComponent,
+    TwittersComponent,
+    RegisterComponent,
+    ProfileComponent,
+    UserEditComponent
+>>>>>>> 5e2a4d9dc20a3b8e49130852be1947f2ac8989f6
   ],
   imports: [
     BrowserModule,
