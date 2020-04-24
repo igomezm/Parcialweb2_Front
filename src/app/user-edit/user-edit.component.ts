@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/user';
-import { UserService } from '../service/user.service';
-import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { CookieService } from 'ngx-cookie-service';
+import {UserService} from '../service/user.service';
+import {User} from '../model/user';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { CookieService} from 'ngx-cookie-service';
+
 
   @Component({
     selector: 'app-user-edit',
     templateUrl: './user-edit.component.html',
     styleUrls: ['./user-edit.component.css']
   })
+
   export class UserEditComponent implements OnInit {
   
     public user: User;
@@ -26,6 +27,8 @@ import { CookieService } from 'ngx-cookie-service';
                 private _cookieService: CookieService) {
       this.user = new User(null, null, null, null);
     }
+  }
+    /*
   
     ngOnInit(): void {
   
@@ -93,5 +96,5 @@ import { CookieService } from 'ngx-cookie-service';
       this._cookieService.remove(this.keyUser);
       this.router.navigate(['login']);
     }
-  
-}
+  }
+/*

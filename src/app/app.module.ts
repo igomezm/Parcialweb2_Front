@@ -25,7 +25,9 @@ export const routes: Routes = [
   declarations: [
     AppComponent,
     TweetComponent,
-    LoginComponent
+    LoginComponent,
+    UserEditComponent,
+    RegisterComponent  
   ],
   imports: [
     HttpClientModule,  

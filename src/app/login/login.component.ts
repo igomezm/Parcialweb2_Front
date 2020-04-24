@@ -14,7 +14,7 @@ import { CookieService} from 'ngx-cookie-service';
 export class LoginComponent implements OnInit {
   public user: User;
   public loading = false;
-  private _cookieService: any;
+  //private _cookieService: any;
   keyUser = '&I%U%$234';
 
 
