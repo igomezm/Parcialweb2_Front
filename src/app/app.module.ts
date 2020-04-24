@@ -7,6 +7,8 @@ import { TweetComponent } from './tweet/tweet.component';
 import { LoginComponent } from './login/login.component';
 import { TwittersComponent } from './twitters/twitters.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 export const routes: Routes = [
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
@@ -22,7 +24,9 @@ export const routes: Routes = [
     //ModelComponent,
     LoginComponent,
     TwittersComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule
