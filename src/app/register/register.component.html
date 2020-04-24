@@ -12,7 +12,7 @@
 
     <div>
       <mat-form-field class="full-width">
-        <mat-label>User</mat-label>
+        <mat-label>UserName</mat-label>
         <input matInput placeholder="Ex. username1" name="username" [(ngModel)]="user.username"  #username="ngModel" required [errorStateMatcher]="matcher">
         <mat-hint [ngStyle]="{color: 'red'}" *ngIf="errorRegister">User exist</mat-hint>
         <mat-error *ngIf="username.hasError('required')">User is <strong>required</strong>
@@ -22,7 +22,7 @@
 
     <div>
       <mat-form-field class="full-width">
-        <mat-label>Pass</mat-label>
+        <mat-label>password</mat-label>
       <input matInput type="password" placeholder="Ex. Pass1*" [(ngModel)]="user.pass" name="pass" #pass="ngModel" required [errorStateMatcher]="matcher">
         <mat-error *ngIf="(pass.hasError('required'))">Pass is <strong>required</strong>
         </mat-error>
@@ -31,7 +31,7 @@
 
     <div>
       <mat-form-field class="full-width">
-        <mat-label>Confirm Pass</mat-label>
+        <mat-label>Password Confirm</mat-label>
         <input matInput type="password" [(ngModel)]="confirm" name="confirmPass" #confirmPass="ngModel" required [errorStateMatcher]="matcher">
         <mat-hint [ngStyle]="{color: 'red'}" *ngIf="pass.value != confirmPass.value">Confirm pass</mat-hint>
         <mat-error *ngIf="(confirmPass.hasError('required'))">Confirmpass is <strong>required</strong>
@@ -40,9 +40,9 @@
     </div>
 
     <mat-card-actions>
-      <button mat-raised-button routerLink="/login">Cancel</button>
       <button mat-raised-button [disabled]="(username.invalid || pass.invalid || confirmPass.invalid
       || typeVehicle.invalid || gallonsVehicle.invalid || gallonsKm.invalid || (pass.value 
       != confirmPass.value))" style="float: right;" color="primary"  (click)="onSave()">Check In</button>
+      <button mat-raised-button routerLink="/login">Cancel</button>
     </mat-card-actions>
   </mat-card>
