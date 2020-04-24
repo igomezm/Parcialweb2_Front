@@ -12,8 +12,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   public user: User
 
-  constructor(private _snackBar: MatSnackBar, private userService: UserService, private router: Router,
-    )) {
+  constructor(private _SnackBar: MatSnackBar, private userService: UserService){
     this.user ={
       idUser:null, username:null, pass:null, creation_date:null
    
