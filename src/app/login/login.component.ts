@@ -3,7 +3,6 @@ import {UserService} from '../service/user.service';
 import {User} from '../model/user';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Router} from '@angular/router';
-import {CookieService} from 'ngx-cookie';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +10,12 @@ import {CookieService} from 'ngx-cookie';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user;
-  checkoutForm;
+  public user: User
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar, private userService: UserService, private router: Router,
+    )) {
     this.user ={
-      idUser, username, pass, creation_date
+      idUser:null, username:null, pass:null, creation_date:null
    
         });
       }
@@ -27,6 +26,7 @@ export class LoginComponent implements OnInit {
       }
 
       onLogin(){
+
         if (this.isValid()) {
           this.errorLogin = false;
           this.loading = true;
