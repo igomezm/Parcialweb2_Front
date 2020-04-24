@@ -1,43 +1,58 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms'
+//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TweetComponent } from './tweet/tweet.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './login/login.component';
-import { Routes } from '@angular/router';
+import { RouterModule,Routes, Router } from '@angular/router';
+import { UserService } from './service/user.service';
+import{ HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './register/register.component';
+import { TweetsComponent } from './tweets/tweets.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProfileComponent } from './profile/profile.component';
-import { TwittersComponent } from './twitters/twitters.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
-import { CookieService} from 'ngx-cookie-service';
-import { HttpClientModule } from '@angular/common/http';
-//import { MatToolbarModule, MatIconModule,MatCardModule, MatButtonModule,MatProgressBarModule } from '@angular/material';
+import { PostService } from './service/post.service';
+import {MatIconModule} from '@angular/material/icon';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 export const routes: Routes = [
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
-  {path: 'profile', component: ProfileComponent, pathMatch: 'full'},
-  {path: 'Twitters', component: TwittersComponent, pathMatch: 'full'},
-  {path: 'user-edit', component: UserEditComponent, pathMatch: 'full'},
+  {path: 'profile/:id', component: ProfileComponent, pathMatch: 'full'},
+  {path: 'tweets', component: TweetsComponent, pathMatch: 'full'}
 ];
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TweetComponent,
-    LoginComponent
+  //  TweetComponent,
+    LoginComponent,
+    RegisterComponent,
+    TweetsComponent,
+    ProfileComponent
   ],
   imports: [
-    HttpClientModule,  
     BrowserModule,
-    /*MatToolbarModule,  
-    MatIconModule,  
-    MatButtonModule,  
-    MatCardModule,  
-    MatProgressBarModule  */
+    //AppRoutingModule,
+    FormsModule,
+    MatCardModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    MatIconModule,
+    MatExpansionModule
   ],
-
-  providers: [CookieService],
+  providers: [UserService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
