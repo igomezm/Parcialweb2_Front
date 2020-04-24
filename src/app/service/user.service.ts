@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,10 @@ export class UserService {
   }
   getAllUsers(){
     return this.http.get('http://localhost:3000/users/');
+
+  }
+  deleteuSERByUsername(username){
+    return this.http.get('http://localhost:3000/users/'+ username);
 
   }
 
