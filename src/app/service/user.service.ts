@@ -15,7 +15,7 @@ export class UserService {
 
   }
 
-
+/*
   getAll(): Observable<Array<User>> {
     return this.http.get(environment.url + '/user').pipe(map(
       (data: any) =>
@@ -82,29 +82,25 @@ export class UserService {
     ));
   }
 }
+*/
     saveUser(user){
-    
-
+      return this.http.post('http://localhost:3000/users/',user);
     }
 
-    login(user){
-
+    loginUser(user){
+      return this.http.post('http://localhost:3000/users/login', user);
     }
 
     getByUserName(username): Observable<User> {
-    
+      return this.http.get<User>('http://localhost:3000/users/username/'+ username);
     }
     findOneUser(id){
-
+      return this.http.get('http://localhost:3000/users/'+ id);
     }
     getAllUsers(){
-
-
-    }
-    deleteUserByUsername(username){
-    
+      return this.http.get('http://localhost:3000/users/');
 
     }
 
 
-}
+  }
