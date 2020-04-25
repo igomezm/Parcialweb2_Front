@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../model/user';
 import {UserService} from '../service/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
  
 
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   public confirm: string;
   date:Date;
 
-  constructor(private _snackBar: MatSnackBar, private userService: UserService) {
+  constructor(private _snackBar: MatSnackBar, private userService: UserService, private router: Router) {
     this.user={
       idUser: null,
       username: null,
@@ -38,6 +39,7 @@ export class RegisterComponent implements OnInit {
             this.openSnackBar('Username exist.', 'Retry');
           } else {
             this.openSnackBar('Registered user successfully',"");
+            this.router.navigate(['/profile']);
         }
         });
 

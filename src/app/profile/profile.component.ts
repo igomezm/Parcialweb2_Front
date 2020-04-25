@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from '../model/user';
+import { Tweet } from '../model/tweetModel';
+import { PostService } from '../service/post.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,33 +13,52 @@ import { User } from '../model/user';
 })
 export class ProfileComponent implements OnInit {
 
-  public user: User;
+  user: User;
+  tweet: Tweet;
+  post= [];
+  idUser = [];
+  usuarios=[];
+  username = "";
+  fecha : Date;
+  mensaje = "";
+  id: number;
 
 
-  constructor(private _snackBar: MatSnackBar, private userService: UserService, private router: Router) {
+  constructor(private router: Router, private route: ActivatedRoute,private userService: UserService,
+    private postService: PostService,private _snackBar: MatSnackBar) {
     this.user={
       idUser: null,
       username: null,
       password: null,
       creation_date: null,
-
+      
+    }
+    this.tweet={
+      id: null, 
+      user: null, 
+      text:null,
+      
     }
 
   }
-    ngOnInit(): void {
-
+  ngOnInit(): void {
+   
     }
-
-          AllPost(){
-            
-
-          }
-
-          deletePost(userdelete){
-          
-          }
-          savePost(user){
-        
-          }  
-
-}
+    createPost(){
+   
+    }
+    allPost(){
+   
+    }
+  
+  deletePost(userdelete){
+  
+  
+  }
+  
+  openSnackBar(message: string, action: string) {
+      this._snackBar.open(message, action, {
+        duration: 5000,
+      });
+    }
+  }

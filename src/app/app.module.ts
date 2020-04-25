@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './login/login.component'
 import { UserService } from './service/user.service';

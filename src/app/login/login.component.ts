@@ -73,6 +73,5 @@ export class LoginComponent implements OnInit {
   direction(){
     this.router.navigate(['/register']);
   }
-  
-    
+ 
 }
