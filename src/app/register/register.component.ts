@@ -14,50 +14,36 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class RegisterComponent implements OnInit {
   public user: User;
   public confirm: string;
+  date:Date;
 
-  constructor(private _snackBar: MatSnackBar, private userService: UserService) {}
+  constructor(private _snackBar: MatSnackBar, private userService: UserService) {
+    this.user={
+      idUser: null,
+      username: null,
+      password: null,
+      creation_date: this.date
+    }
+  }
   
 
   ngOnInit(): void {
-    this.user = new User(null, null, null,null,null);
   }
 
   onSave() {
-    if (this.isValid()) {
+    
       this.userService.saveUser(this.user).subscribe(
         user => {
+          console.log(user);
           if (user === null) {
             this.openSnackBar('Username exist.', 'Retry');
           } else {
-            this.openSnackBar('Registered user successfully, please login.', 'login');
-          }
-          this.user.pass = '';
-          this.confirm = '';
+            this.openSnackBar('Registered user successfully',"");
         }
-      );
+        });
 
-    }
+      
   }
 
-  isValid(){
-   
-    let result = true;
-
-    if (this.user.username === null || this.user.username.length === 0 ){
-      result = false;
-    }
-
-    if (this.user.pass === null || this.user.pass.length === 0){
-      result = false;
-    }
-
-    if (this.confirm === null || this.confirm.length === 0 || this.confirm !== this.user.pass){
-      this.confirm = '';
-      result = false;
-    }
-
-    return result;
-  }
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {

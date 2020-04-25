@@ -15,7 +15,7 @@ export class UserService {
       this.http.get('http://localhost:3000/users');
     }
     saveUser(User){
-      return this.http.get('http://localhost:3000/users/users');
+      return this.http.post('http://localhost:3000/users',User);
     }
 
     findOneUser(id){

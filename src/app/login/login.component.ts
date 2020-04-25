@@ -18,9 +18,15 @@ export class LoginComponent implements OnInit {
   public user: User;
   public loading=false;
   keyUser = '&I%U%$234';
+  date:Date;
 
   constructor(private _snackBar: MatSnackBar, private userService: UserService, private router: Router) {
-    this.user = new User(null, null, null, null, null);
+    this.user={
+      idUser: null,
+      username: null,
+      password: null,
+      creation_date: this.date
+    }
   }
 
 
@@ -35,7 +41,7 @@ export class LoginComponent implements OnInit {
            result = false;
         }
     
-        if (this.user.pass === null || this.user.pass.length === 0){
+        if (this.user.password === null || this.user.password.length === 0){
           result = false;
         }
     
@@ -50,10 +56,11 @@ export class LoginComponent implements OnInit {
                 this.openSnackBar('Verifica tu usuario o contraseña', 'Retry');
               } else {
 
-                this.openSnackBar('Bienvenido', 'user');
+                this.openSnackBar('Bienvenido', this.user.username);
+                this.router.navigate(['/profile']);
               }
               this.user.username = '';
-              this.user.pass = '';
+              this.user.password = '';
             }
           );
     

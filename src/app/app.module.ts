@@ -24,7 +24,7 @@ import { RouterModule,Routes, Router } from '@angular/router';
 export const routes: Routes = [
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
-  {path: 'profile/:id', component: ProfileComponent, pathMatch: 'full'},
+  {path: 'profile', component: ProfileComponent, pathMatch: 'full'},
   {path: 'tweets', component: TweetsComponent, pathMatch: 'full'}
 ];
 
