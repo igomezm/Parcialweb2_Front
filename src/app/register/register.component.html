@@ -1,5 +1,5 @@
-<div class="load" *ngIf="loading">
-    <img src="">
+<div class="content" >
+    <img src="https://1000marcas.net/wp-content/uploads/2019/11/Logo-Twitter.png" height="15%" width="15%">
   </div>
 
   <mat-card class="card">
@@ -15,8 +15,6 @@
         <mat-label>UserName</mat-label>
         <input matInput placeholder="Ex. username1" name="username" [(ngModel)]="user.username"  #username="ngModel" required [errorStateMatcher]="matcher">
         <mat-hint [ngStyle]="{color: 'red'}" *ngIf="errorRegister">User exist</mat-hint>
-        <mat-error *ngIf="username.hasError('required')">User is <strong>required</strong>
-        </mat-error>
       </mat-form-field>
     </div>
 
