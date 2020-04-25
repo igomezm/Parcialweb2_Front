@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../service/user.service';
 import {User} from '../model/user';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 
 
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
   public loading=false;
   keyUser = '&I%U%$234';
 
-  constructor(private _snackBar: MatSnackBar, private userService: UserService) {
+  constructor(private _snackBar: MatSnackBar, private userService: UserService, private router: Router) {
     this.user = new User(null, null, null, null, null);
   }
 
@@ -60,6 +62,9 @@ export class LoginComponent implements OnInit {
     this._snackBar.open(message, action, {
       duration: 5000,
     });
+  }
+  direction(){
+    this.router.navigate(['/register']);
   }
   
     

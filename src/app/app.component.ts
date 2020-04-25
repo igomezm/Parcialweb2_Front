@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Twitter';
   //name = ' Twitter Ingrid Gomez';
+constructor(private route: Router ){
+
+}
+
+  direction(){
+    this.route.navigate(['/register']);
+  }
 }

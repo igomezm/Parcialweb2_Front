@@ -1,23 +1,36 @@
-<div class="content">
-    <img src="https://1000marcas.net/wp-content/uploads/2019/11/Logo-Twitter.png" height="15%" width="15%" >
-    <mat-card class="example-card">   
-            <div>
-              <h1 style="text-align: center;"></h1> 
-            </div>      
-            <div class="example-form">
-                <mat-form-field class="example-full-width">
-                  <mat-label>Usuario</mat-label>
-                  <input matInput placeholder="username" [(ngModel)] = "user.username" required>
-                </mat-form-field>             
-                <mat-form-field class="example-full-width">
-                    <mat-label>Contraseña</mat-label>
-                    <input matInput type="password" [(ngModel)] = "user.pass" required>
-                  </mat-form-field>
-            </div>
-              <div class="example-button-row">
-                <button mat-raised-button color="primary" style="margin-left: 30%;" (click)="login()">INICIAR SESION</button>
-              </div>
-      </mat-card>
 
-    </div>
+<!-- Toolbar -->
+
+
+<mat-card class="example-card" style="margin-left: 30%; top: 150px;">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+
     
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>username</mat-label>
+        <input matInput placeholder="Ex. Devweb1">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" >
+      </mat-form-field>
+    </form>
+
+
+  </mat-card-header>
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions style="float: right;">
+    <button  mat-button (click)="direction()">REGISTER</button>
+    <button mat-button>LOGIN</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+
+
+  
