@@ -20,14 +20,24 @@ export class ProfileComponent implements OnInit {
       username: null,
       password: null,
       creation_date: null,
-      
+
     }
 
   }
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
 
-    
-  
+    }
+
+          AllPost(){
+            
+
+          }
+
+          deletePost(userdelete){
+          
+          }
+          savePost(user){
+        
+          }  
 
 }
