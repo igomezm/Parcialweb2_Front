@@ -1,5 +1,7 @@
-
+import { Tweet} from './tweetModel';
 
 export class User {
-    constructor(public id: number, public username: string, public pass: string, public creation_date:Date ){}
+    constructor(public id: number, public username: string, public pass: string, public creation_date : Date, public tweet: Array<Tweet>) {
+    }
+
     }

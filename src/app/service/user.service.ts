@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
-import { HttpClient, HttpHeaders,HttpEvent, HttpErrorResponse, HttpEventType  } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { map } from  'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +11,11 @@ export class UserService {
   constructor(private http: HttpClient) { 
 
   }
-
     getAllUsers(){
-
       this.http.get('http://localhost:3000/users');
-
     }
-
-    saveUsers(){
+    saveUser(User){
       return this.http.get('http://localhost:3000/users/users');
-
     }
 
     findOneUser(id){
@@ -35,5 +27,4 @@ export class UserService {
     loginUser(user){
       return this.http.post('http://localhost:3000/users/login', user);
     }
-
-}
+  }

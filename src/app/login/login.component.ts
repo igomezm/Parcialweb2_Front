@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../service/user.service';
 import {User} from '../model/user';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { CookieService} from 'ngx-cookie-service';
+
 
 
 
@@ -12,18 +12,15 @@ import { CookieService} from 'ngx-cookie-service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   public user: User;
-  public loading = false;
-  //private _cookieService: any;
+  public loading=false;
   keyUser = '&I%U%$234';
 
-
-  constructor(private _SnackBar: MatSnackBar, private userService: UserService){
-    this.user ={
-      id:null, username:null, pass:null, creation_date:null
-      
-      }
+  constructor(private _snackBar: MatSnackBar, private userService: UserService) {
+    this.user = new User(null, null, null, null, null);
   }
+
 
   ngOnInit(): void {
 
@@ -50,8 +47,7 @@ export class LoginComponent implements OnInit {
               if (user === null) {
                 this.openSnackBar('Verifica tu usuario o contraseña', 'Retry');
               } else {
-                /*this._cookieService.put(this.keyUser, 
-                  user.id.toString()); */
+
                 this.openSnackBar('Bienvenido', 'user');
               }
               this.user.username = '';
@@ -61,7 +57,7 @@ export class LoginComponent implements OnInit {
     
         }
   openSnackBar(message: string, action: string) {
-    this._SnackBar.open(message, action, {
+    this._snackBar.open(message, action, {
       duration: 5000,
     });
   }
