@@ -5,8 +5,7 @@ import { AppComponent } from './app.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-import { LoginComponent } from './login/login.component';
-import { RouterModule,Routes, Router } from '@angular/router';
+import { LoginComponent } from './login/login.component'
 import { UserService } from './service/user.service';
 import{ HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
@@ -19,6 +18,7 @@ import { PostService } from './service/post.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatToolbarModule} from '@angular/material/toolbar';
+import { RouterModule,Routes, Router } from '@angular/router';
 //import { UserEditComponent } from './user-edit/user-edit.component';
 
 export const routes: Routes = [
@@ -36,7 +36,7 @@ export const routes: Routes = [
     RegisterComponent,
     TweetsComponent,
     ProfileComponent,
-    ProfileComponent,
+
     //UserEditComponent,
 
   ],
