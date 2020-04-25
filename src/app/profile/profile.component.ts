@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../service/user.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  public user: User;
 
+
+  constructor(private _snackBar: MatSnackBar, private userService: UserService, private router: Router) {
+    this.user={
+      idUser: null,
+      username: null,
+      password: null,
+      creation_date: null,
+      
+    }
+
+  }
   ngOnInit(): void {
   }
+
     
   
 
