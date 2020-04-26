@@ -1,4 +1,7 @@
-
+/**body{
+  margin: 300px;
+  background-color: black;
+}*/
 .content {
   display: flex;
   margin: 82px auto 32px;
@@ -7,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
-  border-color: aqua;
+  border-color: black;
 
 }
 
@@ -15,22 +18,27 @@
     min-width: 150px;
     max-width: 500px;
     width: 100%;
+    
   }
   
   .example-full-width {
     width: 100%;
+  
   }
   .example-card {
     max-width: 400px;
     height: 200px;
+    background-color: rgb(180, 177, 177);
   }
   
   .example-header-image {
     background-image: url('https://image.flaticon.com/icons/png/512/8/8800.png');
-    background-size: cover;
+    background-size: 37px 37px;
+
   }
   .example-button-row button,
   .example-button-row a {
     margin-right: 8px;
+
   }
   

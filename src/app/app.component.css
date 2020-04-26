@@ -1,3 +1,9 @@
+
+body{
+  margin: 300px;
+  background-color: black;
+  background-image: url(https://www.webespacio.com/wp-content/uploads/2010/12/wallpaper5-pajaro-azul-mosaico.jpg);
+}
 .example-card {
   max-width: 400px;
   height: 200px;
@@ -101,7 +107,7 @@ svg.material-icons:not(:last-child) {
 .card {
   border-radius: 4px;
   border: 1px solid #eee;
-  background-color: #fafafa;
+  background-color: #0c0a0d;
   height: 40px;
   width: 200px;
   margin: 0 8px 16px;
