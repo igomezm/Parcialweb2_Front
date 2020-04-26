@@ -16,4 +16,5 @@ constructor(private route: Router ){
   direction(){
     this.route.navigate(['/register']);
   }
+ 
 }
