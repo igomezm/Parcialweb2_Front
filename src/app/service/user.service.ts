@@ -12,8 +12,8 @@ export class UserService {
 
   }
     
-    findOneUser(id){
-      return this.http.get('http://localhost:3000/users/'+ id);
+    findOneUser(idUser){
+      return this.http.get('http://localhost:3000/users/'+ idUser);
     }
     getByUserName(username): Observable<User> {
       return this.http.get<User>('http://localhost:3000/users/username/'+ username);

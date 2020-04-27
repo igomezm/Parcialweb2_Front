@@ -9,14 +9,16 @@ export class PostService {
   constructor(private http: HttpClient) { 
 
   }
-  AllPost(){
+  findAllPost(){
     return this.http.get('http://localhost:3000/post'); 
 
   }
+  findOnePost(idPost){
+    return this.http.get('http://localhost:3000/post', idPost); 
 
-  deletePost(user){
-    return this.http.delete('http://localhost:3000/post/', user);
-
+  }
+  deletePostByidPostst(idPost){
+    return this.http.delete('http://localhost:3000/post/', idPost);
 
   }
   savePost(user){

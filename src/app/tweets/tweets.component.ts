@@ -4,6 +4,7 @@ import { PostService } from '../service/post.service';
 import { UserService } from '../service/user.service';
 import { User } from '../model/user';
 import { Router } from '@angular/router';
+import { profile } from 'console';
 
 @Component({
   selector: 'app-tweets',
@@ -11,23 +12,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./tweets.component.css']
 })
 export class TweetsComponent implements OnInit {
-  AllTweets = [] ;
+
 
   constructor(private postService: PostService,  private userService: UserService, private router: Router) { 
-    this.AllPost();
-    this.AllTweets = [] ;
+    
   }
 
   ngOnInit(): void {
   }
-
-  AllPost(){
-   
-  }
-
-  profile(username: string){
-      this.router.navigate(["/profile", username]);
-  }
-
-
 }

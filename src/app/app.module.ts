@@ -22,6 +22,9 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { RouterModule,Routes, Router } from '@angular/router';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ActivatedRoute } from '@angular/router';
+
 //import { UserEditComponent } from './user-edit/user-edit.component';
 
 export const routes: Routes = [
@@ -40,6 +43,7 @@ export const routes: Routes = [
     RegisterComponent,
     TweetsComponent,
     ProfileComponent,
+    
 
     //UserEditComponent,
 
@@ -53,6 +57,7 @@ export const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatInputModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatSnackBarModule,
     MatNativeDateModule,
