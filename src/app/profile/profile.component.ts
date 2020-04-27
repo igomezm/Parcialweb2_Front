@@ -76,7 +76,7 @@ export class ProfileComponent implements OnInit {
     } else {
       this.openSnackBar('tweet creado','creado');
         this.twittear.push(this.tweet);
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/login']);
        
         /*this.tweet = new Tweet ();*/     
   }
