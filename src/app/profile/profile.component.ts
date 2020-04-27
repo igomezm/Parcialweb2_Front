@@ -76,12 +76,12 @@ export class ProfileComponent implements OnInit {
     } else {
       this.openSnackBar('tweet creado','creado');
         this.twittear.push(this.tweet);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/profile']);
        
         /*this.tweet = new Tweet ();*/     
   }
   
-    this.tweet.message = '';
+
     }
     );
     }
@@ -101,9 +101,6 @@ isValid(){
       duration: 5000,
       
     });
-  }
-  direction(){
-    this.router.navigate(['/Login']);
   }
  
 

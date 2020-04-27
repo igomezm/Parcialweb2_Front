@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
             this.openSnackBar('Username exist.', 'Retry');
           } else {
             this.openSnackBar('Registered user successfully',"");
-            this.router.navigate(['/profile']);
+            this.router.navigate(['/login']);
         }
         });
   }

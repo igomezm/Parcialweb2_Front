@@ -27,6 +27,21 @@ export class TweetsComponent implements OnInit {
   }
 
   Alltweets(){
+
+    this.postService.findAllPost().subscribe(
+
+      (data) =>{
+        this.tweets=data['data'];
+
+
+
+      }
+
+
+
+    )
+
+    
     /*
     this.postService.findAllPost()
     (tweets => {

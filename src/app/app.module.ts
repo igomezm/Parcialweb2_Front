@@ -32,7 +32,7 @@ export const routes: Routes = [
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
   {path: 'profile', component: ProfileComponent, pathMatch: 'full'},
-  //{path: 'tweets', component: TweetsComponent, pathMatch: 'full'}
+  {path: 'tweets', component: TweetsComponent, pathMatch: 'full'}
   //{path: 'profile/tweet' redirecTo:"tweets", pathMatch:'full'}
 ];
 
