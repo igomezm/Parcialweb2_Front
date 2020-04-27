@@ -14,18 +14,20 @@ export class PostService {
 
   }
 
-  deletePost(userdelete){
-    return this.http.delete('http://localhost:3000/post/'+userdelete);
+  deletePost(user){
+    return this.http.delete('http://localhost:3000/post/', user);
 
 
   }
   savePost(user){
     return this.http.post('http://localhost:3000/post/',user);
 
+  }
+ /* createPost(user){
+    return this.http.post('http://localhost:3000/post/',user);
 
   }
-  
-
-
+  */
 }
+
 

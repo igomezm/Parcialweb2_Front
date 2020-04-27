@@ -1,9 +1,7 @@
-
-body{
-  margin: 300px;
-  background-color: black;
-  background-image: url(https://www.webespacio.com/wp-content/uploads/2010/12/wallpaper5-pajaro-azul-mosaico.jpg);
-}
+/* body {
+    background-image: url("LogoTwitter.png");
+    }
+*/
 .example-card {
   max-width: 400px;
   height: 200px;

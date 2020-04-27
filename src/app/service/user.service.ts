@@ -11,13 +11,7 @@ export class UserService {
   constructor(private http: HttpClient) { 
 
   }
-    getAllUsers(){
-      this.http.get('http://localhost:3000/users');
-    }
-    saveUser(User){
-      return this.http.post('http://localhost:3000/users',User);
-    }
-
+    
     findOneUser(id){
       return this.http.get('http://localhost:3000/users/'+ id);
     }
@@ -27,4 +21,11 @@ export class UserService {
     loginUser(user){
       return this.http.post('http://localhost:3000/users/login', user);
     }
+    getAllUsers(){
+      this.http.get('http://localhost:3000/users');
+    }
+    saveUser(User){
+      return this.http.post('http://localhost:3000/users',User);
+    }
+
   }

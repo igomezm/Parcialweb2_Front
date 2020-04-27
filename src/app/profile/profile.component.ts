@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../service/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserService } from '../service/user.service';
+import { PostService } from '../service/post.service';
 import { User } from '../model/user';
 import { Tweet } from '../model/tweetModel';
-import { PostService } from '../service/post.service';
+import { MatSnackBar } from '@angular/material/snack-bar';     
+                   
 
 @Component({
   selector: 'app-profile',
@@ -15,13 +16,8 @@ export class ProfileComponent implements OnInit {
 
   user: User;
   tweet: Tweet;
-  post= [];
-  idUser = [];
-  usuarios=[];
-  username = "";
-  fecha : Date;
-  mensaje = "";
-  id: number;
+  
+  public create=false;
 
 
   constructor(private router: Router, private route: ActivatedRoute,private userService: UserService,
@@ -36,29 +32,41 @@ export class ProfileComponent implements OnInit {
     this.tweet={
       id: null, 
       user: null, 
-      text:null,
-      
+      message:null,
+      published_date:null,     
     }
 
   }
   ngOnInit(): void {
-   
-    }
-    createPost(){
-   
-    }
-    allPost(){
-   
-    }
   
-  deletePost(userdelete){
-  
-  
+    }
+
+  createPost(){
+    this.create=true;
+    console.log("sirve");
+    this.postService.savePost(this.tweet).subscribe(
+     Tweet=>{
+     
+     if (Tweet === null) {
+      this.openSnackBar('complete el tweet',"");
+    } else {
+      this.openSnackBar('tweet creado',"");
+      
   }
   
+    this.tweet.message = '';
+
+  
+}
+
+  );
+}
+
   openSnackBar(message: string, action: string) {
-      this._snackBar.open(message, action, {
-        duration: 5000,
-      });
-    }
+    this._snackBar.open(message, action, {
+      duration: 5000,
+      
+    });
+  }
+
   }

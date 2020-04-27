@@ -20,9 +20,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { RouterModule,Routes, Router } from '@angular/router';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 //import { UserEditComponent } from './user-edit/user-edit.component';
 
 export const routes: Routes = [
+  {path:'', redirectTo:"login",pathMatch:'full'},
   {path: 'login', component: LoginComponent, pathMatch: 'full'},
   {path: 'register', component: RegisterComponent, pathMatch: 'full'},
   {path: 'profile', component: ProfileComponent, pathMatch: 'full'},
@@ -52,6 +55,8 @@ export const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     HttpClientModule,
     MatIconModule,
     MatExpansionModule
