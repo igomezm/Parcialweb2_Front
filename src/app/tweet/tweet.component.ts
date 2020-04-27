@@ -10,6 +10,8 @@ import { Tweet } from '../model/tweetModel';
   templateUrl: './tweet.component.html',
   styleUrls: ['./tweet.component.css']
 })
+
+
 export class TweetComponent implements OnInit {
   public tweet:Tweet;
   public listaTweets=[];
@@ -20,13 +22,4 @@ export class TweetComponent implements OnInit {
     }
 
   ngOnInit(): void {}
-
-  
-    adicionartweet(){
-      this.listaTweets.push(this.tweet);
-      /*this.tweet = new Tweet ();*/
-    }
-    
-    
-
 }

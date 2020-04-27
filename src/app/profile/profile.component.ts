@@ -53,14 +53,9 @@ export class ProfileComponent implements OnInit {
       this.postService.findAllPost().subscribe(
        twittear =>{
          console.log(twittear);
-        if (twittear === true ) {
-         this.openSnackBar('No se pudo eliminar el tweet','Retry');
-       } else {
-         this.openSnackBar('tweet eliminado','Delete'); 
-         //this.tweet = twittear;
          this.router.navigate(['/tweets']);
   
-       }
+       
       });
     }
 
@@ -69,26 +64,7 @@ export class ProfileComponent implements OnInit {
         this.postService.deletePostByidPostst(tweet).subscribe()
         console.log("eliminar")
       ;
-        
     }
-
-      /*
-     
-      console.log("sirve");
-      this.postService.deletePostByidPostst(idPost).subscribe(
-       tweets=>{
-       if (tweets === null) {
-        this.openSnackBar('No se pudo eliminar el tweet','Retry');
-      } else {
-        this.openSnackBar('tweet eliminado','Delete');  
-    }
-    
-    
-      }
-      );
-      
-    }
-*/
   createPost(){
     if (this.isValid()) {
     this.create=true;
@@ -98,7 +74,11 @@ export class ProfileComponent implements OnInit {
      if (Tweet === null) {
       this.openSnackBar('complete el tweet','Twittea');
     } else {
-      this.openSnackBar('tweet creado','creado');  
+      this.openSnackBar('tweet creado','creado');
+        this.twittear.push(this.tweet);
+        this.router.navigate(['/profile']);
+       
+        /*this.tweet = new Tweet ();*/     
   }
   
     this.tweet.message = '';
@@ -122,5 +102,9 @@ isValid(){
       
     });
   }
+  direction(){
+    this.router.navigate(['/Login']);
+  }
+ 
 
   }
